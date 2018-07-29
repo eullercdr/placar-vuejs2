@@ -9,6 +9,7 @@ require('bootstrap');
 new Vue({
     el: '#app',
     data: {
+        filter: '',
         order: {
             keys: ['pontos', 'gm', 'gs'],
             sort: ['desc', 'desc', 'asc']
@@ -83,9 +84,13 @@ new Vue({
 
     },
     computed: {
-      timesFiltered(){
-          return _.orderBy(this.times,this.order.keys,this.order.sort)
-      }
+        timesFiltered() {
+            let colecao = _.orderBy(this.times, this.order.keys, this.order.sort)
+
+            return _.filter(colecao, item => {
+                return item.nome.indexOf(this.filter)>=0;
+            });
+        }
     },
     filters: {
         saldo(time) {
