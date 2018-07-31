@@ -5,6 +5,7 @@ export class Time{
     this.pontos=0;
     this.gm=0;
     this.gs=0;
+    this.saldo = 0;
   }
 
   updateInfo(pontos, golsMarcados, golsSofridos){
@@ -12,6 +13,7 @@ export class Time{
     this.pontos +=pontos;
     this.gm+=golsMarcados;
     this.gs+=golsSofridos;
+    this.saldo = this.gm - this.gs;
   }
 
   fimJogo(timeAdversario,gols, golsAdversario){
