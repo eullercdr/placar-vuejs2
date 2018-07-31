@@ -11,8 +11,8 @@ new Vue({
     data: {
         filter: '',
         order: {
-            keys: ['pontos', 'gm', 'gs'],
-            sort: ['desc', 'desc', 'asc']
+            keys: ['pontos', 'gm', 'gs', 'saldo'],
+            sort: ['desc', 'desc', 'asc', 'asc']
         },
         colunas: ['nome', 'pontos', 'gm', 'gs', 'saldo'],
         times: [
